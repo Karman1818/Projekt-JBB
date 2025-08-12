@@ -1,70 +1,85 @@
-# React + TypeScript + Vite
+🚀 Uruchomienie projektu (React + PHP + XAMPP)
+1️⃣ Wymagania
+Node.js (zalecane LTS) – pobierz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+npm (instaluje się z Node.js)
 
-Currently, two official plugins are available:
+XAMPP – pobierz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Przeglądarka (np. Chrome)
 
-## Expanding the ESLint configuration
+2️⃣ Uruchomienie Backend (PHP + XAMPP)
+Uruchom XAMPP i włącz:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Apache
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+(opcjonalnie) MySQL – jeśli aplikacja korzysta z bazy
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Skopiuj folder z backendem do katalogu:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+makefile
+Kopiuj
+Edytuj
+C:\xampp\htdocs\nazwa_folderu
+Wejdź w przeglądarce na:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+arduino
+Kopiuj
+Edytuj
+http://localhost/nazwa_folderu
+Jeśli jest plik config.php, dostosuj ustawienia bazy danych (host, user, password, dbname).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3️⃣ Uruchomienie Frontendu (React + npm)
+Wejdź w folder z frontendem:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-"# Projekt-JBB" 
+bash
+Kopiuj
+Edytuj
+cd sciezka/do/frontendu
+Zainstaluj zależności:
+
+bash
+Kopiuj
+Edytuj
+npm install
+Uruchom aplikację developerską:
+
+bash
+Kopiuj
+Edytuj
+npm run dev
+W terminalu zobaczysz link (np.):
+
+arduino
+Kopiuj
+Edytuj
+http://localhost:5173
+Otwórz go w przeglądarce.
+
+4️⃣ Struktura projektu
+bash
+Kopiuj
+Edytuj
+projekt/
+│
+├── backend/        # PHP + API
+│   └── index.php
+│
+└── frontend/       # React + Vite
+    ├── src/
+    └── package.json
+5️⃣ Uwagi
+Frontend może wymagać zmiany adresu API w kodzie (fetch, axios) na:
+
+arduino
+Kopiuj
+Edytuj
+http://localhost/nazwa_folderu
+Jeśli jest problem z CORS, upewnij się, że w backendzie są ustawione nagłówki:
+
+php
+Kopiuj
+Edytuj
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Credentials: true");
+XAMPP musi być uruchomiony przed korzystaniem z backendu.
