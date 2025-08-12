@@ -1,0 +1,46 @@
+/* Agreement.css */
+/* Usuwa poziomy scrollbar w całej aplikacji */
+body {
+  overflow-x: hidden;
+}
+.button-animated {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.button-animated:hover {
+  background-color: #1d4ed8; /* Tailwind's blue-700 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.button-animated:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* Tailwind's ring-blue-400 */
+}
+
+select,
+select option {
+    color: black !important;
+    background-color: white !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+select:focus {
+    outline: none;
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); 
+}
